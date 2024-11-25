@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const activity3Step6 = document.getElementById('activity-3-step-6');
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                if (activity3Step6) activity3Step6.style.display = 'block';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if (activity3Step6) activity3Step6.style.display = 'none';
+            } else {
+                activity2.style.display = 'block';
+                if (activity3Step6) activity3Step6.style.display = 'block';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M12</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+                       <!-- Actividad 0 -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('revision_mision')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="revision_mision" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1:</strong> Proyectar Diapositiva 1 y verificar que estén disponibles: Magic Boards, Cutebot, BBC Micro.</td>
+                        <td style="padding: 10px; vertical-align: top;">No aplica</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity">
+            <div class="banner" onclick="toggleContent('saludo_ritual')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="saludo_ritual" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 2 "Gnius Club: Guardianes del Zoológico".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Hola Genios Guardianes del Zoológico! 🌟 Hoy vamos a programar a nuestro Cutebot para cuidar a los animales del zoológico. ¿Están listos para esta increíble misión?"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo están?" con poses para expresar el estado de ánimo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Quiero saber cómo están hoy. Si te sientes listo para alimentar a los animales, abre los brazos como si imitaras las alas de un pingüino. Si necesitas más energía, coloca tus manos sobre tu cabeza como si fueras un Perezoso bostezando."</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento" y guiar a los estudiantes.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Juntamos nuestras manos en agradecimiento por la oportunidad de aprender juntos hoy. ¡Gracias por estar aquí, Genios Guardianes del Zoológico! Hoy será un gran día lleno de aprendizaje y diversión."</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión: Guardianes del Zoológico" y leer los objetivos en voz alta.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Hoy tenemos tres grandes objetivos: 1. Programar movimientos básicos para que nuestro Cutebot entregue la comida. 2. Diseñar rutas estratégicas dentro del zoológico. 3. Trabajar en equipo para alimentar a todos los animales. ¡Manos a la obra!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+                  <!-- Actividad 2 -->
+        <div id="activity-2" class="activity">
+            <div class="banner" onclick="toggleContent('brain_vitamin')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 2.5 minutos</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Construcción de torres creativas con restricciones para fomentar el pensamiento crítico y la motricidad.
+                </div>
+            </div>
+            <div id="brain_vitamin" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 6 "Desafío Animal". Preparar los bloques LEGO® y explicar la actividad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Guardianes del Zoológico! Vamos a construir torres para alimentar a los animales, pero con un reto especial. ¡No pueden encajar los bloques! ¿Listos para el desafío?"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 7 "Construcción Creativa". Indicar que construyan torres usando solo dos dedos o alternando manos.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Construyan una torre lo más alta posible usando solo dos dedos. ¿Podrán lograrlo sin que se caiga? ¡El zoológico necesita nuestra ayuda para alcanzar las alturas!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 8 "Reflexión del Reto". Guiar una breve discusión sobre qué funcionó y cómo aplicarlo en los siguientes retos.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Qué torres tan geniales, Genios! ¿Qué técnica les ayudó a construir mejor? ¿Cómo creen que estas habilidades nos ayudarán con el Cutebot y el zoológico?"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+                <!-- Actividad 3 -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('challenge')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Resolución de retos prácticos para programar rutas estratégicas con el Cutebot y alimentar a los animales.
+                </div>
+            </div>
+            <div id="challenge" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 10 "Misión: Alimentar a los Animales". Presentar la historia y los retos disponibles.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Guardianes del Zoológico! Nuestro Cutebot necesita llevar comida a los leones, elefantes y pingüinos siguiendo rutas estratégicas. ¡Acepten este gran desafío y elijan su nivel!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 11 "Preparación del Challenge". Indicar que recojan y organicen los materiales necesarios.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Asegúrense de tener el Cutebot, bloques para construir rutas y obstáculos, y un temporizador para medir los tiempos. ¡Prepárense para esta aventura!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar Diapositiva 12 "Preparando Materiales". Mostrar un temporizador de 3 minutos.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Tienen 3 minutos para organizar y preparar todo. ¡La organización es clave para alimentar a los animales del zoológico!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 13 "Retos del Challenge".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Guardianes del Zoológico! Escuchen con atención los retos que tienen hoy. Pueden elegir uno según el nivel que prefieran:<br>
+                        <br>
+                        <strong>1. Rookie (Básico):</strong> Completen un circuito que conecta las zonas de los pingüinos, elefantes y leones. Movimientos básicos.<br>
+                        <strong>2. Master (Intermedio):</strong> Naveguen por un circuito con movimientos más complejos para visitar a los pingüinos, elefantes y leones. Más precisión y giros.<br>
+                        <strong>3. Hacker (Avanzado):</strong> Completen un laberinto que cubra todo el zoológico, visitando las tres zonas en tiempos específicos. Secuencias largas y cronometradas.<br>
+                        ¡Elijan su nivel y prepárense para programar. Los animales esperan su comida!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (20 minutos):</strong> Proyectar Diapositiva 14 "Challenge en Proceso".</td>
+                        <td style="padding: 10px; vertical-align: top;">"Es hora de programar. Trabajen en su circuito y asegúrense de que el Cutebot complete todos los movimientos correctamente. ¡Buena suerte!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-3-step-6">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (5 minutos):</strong> Supervisar las pruebas y guiar los ajustes necesarios.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Es momento de probar! Verifiquen que el Cutebot cumple con el reto y ajusten lo necesario. ¡El éxito está en sus manos!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (3 minutos):</strong> Proyectar Diapositiva 15 "Reflexión del Challenge". Guiar una breve discusión en equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Gran trabajo, Genios Guardianes! Reflexionemos: ¿Qué fue lo más desafiante? ¿Qué aprendieron sobre programación y trabajo en equipo? ¿Cómo aplicarían esto en el futuro?"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 8 (0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Felicitaciones, Genios! Hoy completamos los movimientos básicos del Cutebot para alimentar a los animales. ¡El zoológico está agradecido por su gran trabajo en equipo!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity">
+            <div class="banner" onclick="toggleContent('team_gnius')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7 minutos</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Formación de equipos y colaboración para evaluar el desempeño del Cutebot en los retos.
+                </div>
+            </div>
+            <div id="team_gnius" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 17 "Introducción al Team Gnius".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Guardianes del Zoológico! Trabajaremos en equipos de 3 integrantes. Cada equipo verificará si los recorridos de su Cutebot cumplen con los retos. ¡Elijan a sus compañeros y prepárense!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 18 "Formando Equipos". Mostrar un temporizador para que los equipos se organicen.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Tienen 1 minuto para reunirse en equipos de 3. Elijan un líder, un programador y un observador. ¡Cada rol será clave para el éxito del equipo!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 19 "Evaluación del Recorrido".</td>
+                        <td style="padding: 10px; vertical-align: top;">"Ahora que tienen sus equipos, comiencen a preparar sus Cutebots para la evaluación. Asegúrense de que todos entiendan las condiciones del reto."</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 20 "Evaluación en Proceso".</td>
+                        <td style="padding: 10px; vertical-align: top;">"Tomen 2 minutos para verificar si su Cutebot cumple con el reto. ¿Llega a todas las zonas de animales? ¿Cumple con los tiempos establecidos? ¡Trabajen juntos para asegurar el éxito!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (2 minutos):</strong> Proyectar Diapositiva 21 "Ajustes del Recorrido".</td>
+                        <td style="padding: 10px; vertical-align: top;">"Si detectaron errores, ajusten el programa y prueben nuevamente. ¡Recuerden que el trabajo en equipo y la precisión son esenciales para completar la misión!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 22 "Reflexión del Equipo". Pedir a los equipos que compartan sus aprendizajes.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Gran trabajo, Guardianes! Reflexionen juntos: ¿Qué funcionó bien en la evaluación? ¿Qué ajustes fueron necesarios? ¿Cómo podrían mejorar su colaboración en el futuro?"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity">
+            <div class="banner" onclick="toggleContent('honor_lab')">
+                <div class="title">🏅 Actividad 5: Honor de Lab ⏰ Tiempo: 3.5 minutos</div>
+                <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Reflexión final y organización del espacio de trabajo para cerrar con respeto y orden.
+                </div>
+            </div>
+            <div id="honor_lab" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 23 "Revisión de Objetivos".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Genios Guardianes, excelente trabajo! Hoy logramos programar movimientos precisos para el Cutebot, cumplir con los tiempos y visitar todas las zonas de animales. ¡Gran esfuerzo de equipo!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (3 minutos):</strong> Proyectar Diapositiva 24 "Honor de Dojo: Organización". Guiar a los estudiantes para recoger y ordenar los materiales.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Antes de irnos, vamos a dejar todo limpio y en orden. ¡El respeto por nuestro espacio de trabajo refleja el esfuerzo que pusimos hoy en la misión!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+
+</body>
+</html>
